@@ -1,0 +1,19 @@
+{
+    "sqltools.connections": [
+        {
+            "pgOptions": {
+                "ssl": {
+                    "rejectUnauthorized": false
+                }
+            },
+            "ssh": "Disabled",
+            "previewLimit": 50,
+            "server": "rental-ps-db-raflyramadhansyah08-1611.h.aivencloud.com",
+            "port": 26817,
+            "driver": "PostgreSQL",
+            "name": "Aiven Rental PS",
+            "database": "defaultdb",
+            "username": "avnadmin"
+        }
+    ]
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Admin</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="card" style="max-width:400px;margin:auto;margin-top:100px;">
+
+        <h2 style="margin-bottom:25px;">
+            🔐 Login Admin
+        </h2>
+
+        <div class="input-group">
+            <label>Username</label>
+            <input type="text" id="username">
+        </div>
+
+        <div class="input-group">
+            <label>Password</label>
+            <input type="password" id="password">
+        </div>
+
+        <button onclick="login()">
+            Login
+        </button>
+
+    </div>
+
+</div>
+
+<script>
+
+function login(){
+
+    const username =
+        document.getElementById('username').value;
+
+    const password =
+        document.getElementById('password').value;
+
+    if(
+        username === 'admin' &&
+        password === '12345'
+    ){
+
+        localStorage.setItem('admin','true');
+
+        window.location.href = 'index.html';
+
+    }else{
+
+        alert('Login gagal');
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>

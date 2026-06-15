@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rental PS Realtime</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="title">
+        <h1>🎮 Rental PS Realtime</h1>
+        <p>Sistem booking realtime Firebase + Aiven</p>
+        <button onclick="logout()" style="max-width:200px;margin:auto;margin-top:20px;">
+    Logout
+</button>
+    </div>
+
+    <div class="stats">
+
+        <div class="stat-box">
+            <p>Total Booking</p>
+            <h3 id="totalBooking">0</h3>
+        </div>
+
+        <div class="stat-box">
+            <p>PS Dipakai</p>
+            <h3 id="psDipakai">0</h3>
+        </div>
+
+        <div class="stat-box">
+            <p>Total Pendapatan</p>
+            <h3 id="pendapatan">Rp 0</h3>
+        </div>
+
+    </div>
+
+    <div class="grid">
+
+        <div class="card">
+
+            <h2>Booking PS</h2>
+
+            <div class="input-group">
+                <label>Nama</label>
+                <input type="text" id="nama">
+            </div>
+
+            <div class="input-group">
+                <label>Pilih PS</label>
+
+                <select id="ps">
+                    <option>PS 1</option>
+                    <option>PS 2</option>
+                    <option>PS 3</option>
+                    <option>PS 4</option>
+                    <option>PS 5</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label>Durasi Main</label>
+                <input type="number" id="durasi">
+            </div>
+
+            <button onclick="bookingPS()">
+                Booking Sekarang
+            </button>
+
+        </div>
+
+       <div class="card">
+
+    <h2>Booking Realtime</h2>
+
+    <div id="bookingList"></div>
+
+</div>
+
+<div class="card">
+
+    <h2>Riwayat Booking</h2>
+
+    <div id="riwayat"></div>
+
+</div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script type="module" src="script.js"></script>
+
+</body>
+</html>

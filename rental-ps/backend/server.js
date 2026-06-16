@@ -13,7 +13,12 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, '..')));
 
 // ================= FIREBASE =================
-const serviceAccount = require('./firebase-service-account.json');
+const serviceAccount = JSON.parse(
+  Buffer.from(
+    process.env.FIREBASE_SERVICE_ACCOUNT_BASE64,
+    'base64'
+  ).toString('utf8')
+);
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
@@ -25,11 +30,11 @@ const realtimeDB = admin.database();
 
 // ================= AIVEN =================
 const pool = new Pool({
-  host: 'rental-ps-db-raflyramadhansyah08-1611.h.aivencloud.com',
-  port: 26817,
-  user: 'avnadmin',
-  password: 'AVNS_TMAyMjjjdWl3i2MbIaH',
-  database: 'defaultdb',
+  host: process.env.DB_HOST,
+  port: process.env.DB_PORT,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
   ssl: {
     rejectUnauthorized: false
   }

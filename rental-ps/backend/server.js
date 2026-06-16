@@ -10,8 +10,17 @@ app.use(cors());
 app.use(express.json());
 
 // ================= FRONTEND =================
-app.use(express.static(path.join(__dirname, '..')));
+// ================= FRONTEND =================
+const frontendPath = path.resolve(__dirname, '..');
 
+console.log('Frontend Path:', frontendPath);
+
+app.use(express.static(frontendPath));
+
+// ================= HOME =================
+app.get('/', (req, res) => {
+  res.sendFile(path.join(frontendPath, 'index.html'));
+});
 // ================= FIREBASE =================
 const serviceAccount = JSON.parse(
   Buffer.from(

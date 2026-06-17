@@ -92,8 +92,7 @@ async function bookingPS(){
 
     const harga = durasi * 10000;
 
-    await fetch(
-        'http://127.0.0.1:3000/booking',
+    await fetch('/booking')
         {
 
             method:'POST',
@@ -128,9 +127,7 @@ window.bookingPS = bookingPS;
 
 async function loadBookings(){
 
-    const response = await fetch(
-        'http://127.0.0.1:3000/bookings'
-    );
+    const response = await fetch('bookings');
 
     const data = await response.json();
 
